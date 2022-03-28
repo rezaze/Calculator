@@ -1,4 +1,4 @@
-const theNumbers = document.querySelectorAll("#number");
+const theNumbers = document.querySelectorAll("#numbers");
 const showText = document.getElementById("show");
 const btnDeel = document.getElementById("delAll")
 const btnOpertion = document.querySelectorAll("#op");
@@ -18,7 +18,9 @@ let result;
 const showNumber = (e) => {
     if (showText.innerHTML == "0.0") {
         showText.innerHTML = theNumbers[e].innerHTML;
-    } else { showText.innerText += theNumbers[e].innerHTML; }
+    } else {
+        showText.innerText += theNumbers[e].innerHTML;
+    }
 
 }
 
@@ -87,14 +89,14 @@ const theAnswer = () => {
                 case '-':
                     result = number1 - number2;
                     break;
-                case '/':
+                case '÷':
                     result = number1 / number2;
                     break;
                 default:
                     break;
 
             }
-            showText.innerHTML = result + " = " + number2 + " " + opertion + " " + number1;
+            showText.innerHTML = result.toFixed(2) + " = " + number2 + " " + opertion + " " + number1;
 
         }
 
