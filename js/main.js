@@ -96,7 +96,7 @@ const theAnswer = () => {
                     break;
 
             }
-            showText.innerHTML = result.toFixed(2) + " = " + number2 + " " + opertion + " " + number1;
+            showText.innerHTML = result + " = " + number2 + " " + opertion + " " + number1;
 
         }
 
