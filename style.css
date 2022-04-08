@@ -11,7 +11,8 @@
 body {
     padding: 0;
     margin: 0;
-    background: rgba(255, 192, 203, 0.7);
+    background: rgb(30, 29, 29);
+    background-size: 100% 1500px;
 }
 
 h4 {
@@ -20,7 +21,7 @@ h4 {
     text-align: center;
     font-family: 'Parisienne', cursive;
     font-weight: bold;
-    text-shadow: -2px -2px 10px #fc737c;
+    text-shadow: -2px -2px 10px #131314;
 }
 
 .layout {
@@ -28,10 +29,10 @@ h4 {
     width: 350px;
     height: 540px;
     position: relative;
-    background: pink;
+    background: gray;
     border-radius: 20px;
     justify-content: center;
-    box-shadow: 2px 2px 15px rgb(248, 147, 165);
+    box-shadow: 2px 2px 15px rgb(26, 26, 28);
 }
 
 .calculator {
@@ -60,17 +61,17 @@ h4 {
 button {
     border-radius: 50%;
     border: none;
-    background: linear-gradient(315deg, #fc737c, pink);
-    box-shadow: 2px 2px 6px #f58787;
+    background: linear-gradient(315deg, rgb(247, 247, 247), #070707);
+    box-shadow: 2px 2px 6px #0b0b11;
 }
 
 button:active {
-    background: linear-gradient(315deg, pink, #fc737c);
+    background: linear-gradient(315deg, rgb(0, 0, 0), #070606);
 }
 
 .output {
     grid-column: 1/ -1;
-    box-shadow: inset -2px -2px 10px #f17171;
+    box-shadow: inset -2px -2px 10px #000000;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -105,7 +106,7 @@ footer {
     color: #fff;
     font-size: 32px;
     font-weight: bold;
-    text-shadow: 2px 2px 5px #fc737c;
+    text-shadow: 2px 2px 5px #0f0d13;
     font-family: 'Parisienne', cursive;
 }
 
@@ -115,5 +116,9 @@ a {
     font-weight: bold;
     text-decoration: none;
     font-family: 'Parisienne', cursive;
-    text-shadow: 2px 2px 5px #fc737c;
+    text-shadow: 2px 2px 5px #0b0a0c;
+}
+
+button:hover {
+    opacity: 0.76;
 }
