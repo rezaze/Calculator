@@ -41,7 +41,7 @@ const showOpertion = (e) => {
 const delBack = () => {
     let len = showText.innerHTML.length;
     if (len > 1) {
-        showText.innerHTML = showText.innerHTML.slice(0, len - 1);
+        showText.innerHTML = showText.innerHTML.slice(0,len - 1);
         console.log(len);
 
     } else {
