@@ -30,7 +30,7 @@ const showOpertion = (e) => {
     console.log(opertion);
 
     if (!number1Set) {
-        number1 = parseFloat(showText.innerText);
+        number1 = +(showText.innerText);
         number1Set = true;
     }
 
@@ -41,7 +41,7 @@ const showOpertion = (e) => {
 const delBack = () => {
     let len = showText.innerHTML.length;
     if (len > 1) {
-        showText.innerHTML = showText.innerHTML.slice(0,len - 1);
+        showText.innerHTML = showText.innerHTML.slice(0, len - 1);
         console.log(len);
 
     } else {
@@ -65,7 +65,7 @@ const delEveryShow = () => {
 
 const theAnswer = () => {
 
-    number2 = parseFloat(showText.innerHTML);
+    number2 = +(showText.innerHTML);
 
     setNanResult = isNaN(result);
     let setNanNumber = isNaN(number2);
