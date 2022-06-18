@@ -16,21 +16,22 @@ let setNanResult;
 let result;
 let arrayOper = [];
 
-const showNumber = (e) => {
-    if (showText.innerHTML == "0.0") {
-        showText.innerHTML = theNumbers[e].innerHTML;
-    } else {
-        showText.innerText += theNumbers[e].innerHTML;
-    }
 
-}
+theNumbers.forEach(e => {
+    e.addEventListener("click", event => {
+        if (showText.innerHTML == "0.0") {
+            showText.innerHTML = e.innerHTML;
+        } else {
+            showText.innerText += e.innerHTML;
+        }
+    })
+})
 
 const showOpertion = (e) => {
-    2
+
     opertion = btnOpertion[e].innerText;
-    arrayOper = showText.innerHTML.split("");
-    if (!showText.innerHTML.includes("/")) {
-        if (showText.innerHTML === "0.0" && !showText.innerHTML.includes("-") && !showText.innerHTML.includes("+") && !showText.innerHTML.includes("*")) {
+    if (!showText.innerHTML.includes("/") && !showText.innerHTML.includes("-") && !showText.innerHTML.includes("+") && !showText.innerHTML.includes("*")) {
+        if (showText.innerHTML === "0.0") {
             showText.innerHTML = "0";
         } else {
             showText.innerHTML += opertion;
@@ -79,7 +80,12 @@ const theAnswer = e =>
 
 float.addEventListener("click", () => {
     if (setPoint == false) {
-        showText.innerText += '.';
+        if (showText.innerHTML === "0.0") {
+            showText.innerHTML = "0.";
+        } else {
+            showText.innerText += '.';
+        }
+
         setPoint = true;
     }
 });
