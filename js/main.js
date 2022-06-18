@@ -14,6 +14,7 @@ let number1Set = false;
 let answerd = false;
 let setNanResult;
 let result;
+let arrayOper = [];
 
 const showNumber = (e) => {
     if (showText.innerHTML == "0.0") {
@@ -25,17 +26,24 @@ const showNumber = (e) => {
 }
 
 const showOpertion = (e) => {
+    2
     opertion = btnOpertion[e].innerText;
-    console.log('opertion: ');
-    console.log(opertion);
+    arrayOper = showText.innerHTML.split("");
+    if (!showText.innerHTML.includes("/")) {
+        if (showText.innerHTML === "0.0" && !showText.innerHTML.includes("-") && !showText.innerHTML.includes("+") && !showText.innerHTML.includes("*")) {
+            showText.innerHTML = "0";
+        } else {
+            showText.innerHTML += opertion;
+
+        }
+    }
+
 
     if (!number1Set) {
         number1 = +(showText.innerText);
         number1Set = true;
     }
 
-    showText.innerHTML = "";
-    //console.log(opertion + number1);
 }
 
 const delBack = () => {
@@ -63,51 +71,10 @@ const delEveryShow = () => {
     answerd = false;
 }
 
-const theAnswer = () => {
+const theAnswer = e =>
+    showText.innerHTML =
+    parseFloat(eval(showText.innerHTML).toFixed(2));
 
-    number2 = +(showText.innerHTML);
-
-    setNanResult = isNaN(result);
-    let setNanNumber = isNaN(number2);
-    console.log(setNanResult + " " + setNanNumber);
-    if (setNanResult == false && setNanNumber == false) {
-
-        if (!answerd) {
-            number1Set = false;
-            answerd = true;
-            console.log('number1: ' + number1);
-            console.log('number2: ' + number2);
-            console.log('operation: ' + opertion);
-
-            switch (opertion) {
-                case '+':
-                    result = number1 + number2;
-                    break;
-                case '*':
-                    result = number1 * number2;
-                    break;
-                case '-':
-                    result = number1 - number2;
-                    break;
-                case '÷':
-                    result = number1 / number2;
-                    break;
-                default:
-                    break;
-
-            }
-            showText.innerHTML = number1 + " " + opertion + " " + number2 + " = " + result;
-
-        }
-
-
-    } else {
-        number2 = 1;
-        result = number1;
-
-    }
-
-}
 
 
 float.addEventListener("click", () => {
